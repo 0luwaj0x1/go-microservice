@@ -10,8 +10,8 @@ import (
 
 func GetUser(w http.ResponseWriter, r *http.Request) {
  userId := 123
- user, _ := services.GetUser(int64(userId))
- //fmt.Println(user)
+ user, _ := services.UserService.GetUser(int64(userId))
+
  jsonValue, _ := json.Marshal(user)
  w.Write(jsonValue)
 }

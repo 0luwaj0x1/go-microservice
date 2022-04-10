@@ -4,7 +4,12 @@ import (
 	"example.com/microservices/domain"
 )
 
+var (
+	UserService userService
+)
 
-func GetUser(userID int64) (*domain.User, error) {
-	return domain.GetUser(userID)
+type userService struct {}
+
+func (u *userService) GetUser(userID int64) (*domain.User, error) {
+	return domain.UserDao.GetUser(userID)
 }
